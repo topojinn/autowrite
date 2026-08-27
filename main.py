@@ -1,9 +1,10 @@
-#set delay
+#set delay and define error exit func.
 delay = 0.10
 
 def exit_error():
     config.exit(1)
 
+#is the module imported correctly?
 try:
   import sys as config
 except ImportError:
@@ -23,18 +24,20 @@ except ModuleNotFoundError:
     print("error: module not imported")
     exit_error()
 
+#all good, let's write:
 
-print("with text you want to automate?")
-repl = input()
+while True:
+    print("witch text you want to automate?")
+    repl = input()
 
-if repl == "exit":
-  config.exit(0)
+    if repl == "exit":
+        config.exit(0)
 
-for digit in repl:
+    for digit in repl:
 
-    print(digit, end="")
-    config.stdout.flush()
+        print(digit, end="")
+        config.stdout.flush()
     
-    time.sleep(delay)
+        time.sleep(delay)
 
-print()
+    print()
