@@ -1,19 +1,28 @@
-#set delay and define error exit func.
+# set delay and define error exit func.
 delay = 0.10
 
 def exit_error():
     config.exit(1)
 
-# (all this block should work, or shouldnt work.)
-# (i think is randomized.)
-# (i'm not sure how.)
+# for some misterious motivations, it now works.
+# probably for the global function or maybe the float input.
+
+# who knows.
 
 def set_delay():
-    print("change the single letter split's delay to")
-    delay = input()                                        
+    global delay
 
+    print("change the single letter split's delay to")
+    delay = float(input())                                        
+
+# chang the text input
+    repl = "delay successfully resetted"
     print()
-    repl = "delay changed with success"
+
+# other commented way: clears the text input
+
+#    repl = " "
+#    print()
 
 #is the module imported correctly?
 try:
@@ -25,6 +34,8 @@ except ModuleNotFoundError:
   print("error: module not imported")
   exit_error()
 
+# normally, these 2 modules shouldn't return the second error (ModuleNotFoundError)
+# but the first error, ImportError, could happen.
 
 try:
   import time
@@ -35,7 +46,7 @@ except ModuleNotFoundError:
     print("error: module not imported")
     exit_error()
 
-#all good, let's write:
+# all good, let's write:
 
 while True:
     print("witch text you want to automate?")
