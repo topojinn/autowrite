@@ -4,6 +4,17 @@ delay = 0.10
 def exit_error():
     config.exit(1)
 
+# (all this block should work, or shouldnt work.)
+# (i think is randomized.)
+# (i'm not sure how.)
+
+def set_delay():
+    print("change the single letter split's delay to")
+    delay = input()                                        
+
+    print()
+    repl = "delay changed with success"
+
 #is the module imported correctly?
 try:
   import sys as config
@@ -32,6 +43,9 @@ while True:
 
     if repl == "exit":
         config.exit(0)
+
+    if repl == "delay":
+        set_delay()
 
     for digit in repl:
 
