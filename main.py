@@ -16,11 +16,13 @@ def set_delay():
     delay = float(input())                                        
 
 # chang the text input
+    global repl
     repl = "delay successfully resetted"
     print()
 
 # other commented way: clears the text input
 
+#    global repl
 #    repl = " "
 #    print()
 
