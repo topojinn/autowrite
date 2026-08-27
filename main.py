@@ -1,21 +1,36 @@
 # set delay and define error exit func.
 delay = 0.10
+count = 1
 
 def exit_error():
     config.exit(1)
 
 # for some misterious motivations, it now works.
-# probably for the global function or maybe the float input.
+# remember: NEVER EDIT THIS UNLESS YOU REALLY NEED TO DO THAT.
 
 # who knows.
+
+def repeat():
+    global count
+    global repl
+
+    print("how much times you want the text is repeated?")
+    count = input()
+
+#the following lines was putted in another place of the file
+#but it was:
+
+# repl = str(repl * (int(count)))
+
+
+# and to change the text input:
 
 def set_delay():
     global delay
 
     print("change the single letter split's delay to")
-    delay = float(input())                                        
+    delay = float(input())
 
-# chang the text input
     global repl
     repl = "delay successfully resetted"
     print()
@@ -59,6 +74,12 @@ while True:
 
     if repl == "delay":
         set_delay()
+
+    if repl == "repeat":
+        repeat()
+
+    
+    repl = (str(repl) * (int(count))) 
 
     for digit in repl:
 
