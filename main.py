@@ -72,23 +72,20 @@ while True:
     if repl == "exit":
         config.exit(0)
 
-    elif repl == "delay":
+    if repl == "delay":
         set_delay()
 
-    elif repl == "repeat":
+    if repl == "repeat":
         repeat()
 
     
-    repl = (str(repl) * (int(count)))
+    repl = (str(repl) * (int(count))) 
 
-    try:
-        for digit in repl:
+    for digit in repl:
 
-            print(digit, end="")
-            config.stdout.flush()
+        print(digit, end="")
+        config.stdout.flush()
     
-            time.sleep(delay)
-            print()
+        time.sleep(delay)
 
-    except:
-        print("sorry, there was an unknown error. ")
+    print()
