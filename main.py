@@ -1,8 +1,21 @@
 # AUTOWRITE
 # _______________
 
+# LINKS:
+# official GitHub rpository | https://github.com/topojinn/autowrite/
+# official License text | https://github.com/topojinn/autowrite/blob/main/LICENSE/
+# online code backup | https://github.com/topojinn/autowrite/blob/main/main.py/
+
+# !!online code backup advice!! :
+# NOT ALWAYS UPDATED.
+# Every day the code is being updated, but not always published.
+
+# for example, at this time, youre pribably reading an non-updated text file.
+
+# OTHER:
+
 # This program is to write a text with a typewriter effect.
-# OTHER FEATURES:
+# FEATURES / EXTRA FEATURES:
 
 # DELAY/ VELOCITY:
 # Time slack between a letter and the other.
@@ -10,7 +23,98 @@
 # text "change the single letter split's delay to". Then write a number (better if its between 0.2 and 0.30).
 
 # REPEAT:
-# Repeat the text you wrote.
+# Repeat the text you wrote for a value.
+
+# FONT:
+# Change the font of the typewriter.
+# - supported fonts:
+
+#* Arial - https://learn.microsoft.com/en-us/typography/font-list/arial
+#* Calibri - https://learn.microsoft.com/en-us/typography/font-list/calibri
+#* Georgia - https://learn.microsoft.com/en-us/typography/font-list/georgia
+#* Verdana - https://learn.microsoft.com/en-us/typography/font-list/verdana
+#* Tahoma - https://learn.microsoft.com/en-us/typography/font-list/tahoma
+#* Times New Roman - https://learn.microsoft.com/en-us/typography/font-list/times-new-roman
+#* Courier New - https://learn.microsoft.com/en-us/typography/font-list/courier-new
+#* Lucida Console - https://learn.microsoft.com/en-us/typography/font-list/lucida-console
+#* FixedSys - https://en.wikipedia.org/wiki/Fixedsys
+
+# !FONT FEATURE WARNING!
+# The path used to import these fonts is based on Italian system.
+# For another windows system not configured as Italian, this feature shouldn't work.
+
+# This will be fixed soon.
+
+# GENERAL > ACTUAL BUGS:
+# In general, the font feature doesn't work, but this isn't considerable as a bug, Is only a W.I.P. feature.
+
+#general bugs count:
+# bugs known: 0 | features bugged/WIP: 1
+
+# CREDITS:
+# Written by topojinn | https://github.com/topojinn/
+# Code Review by egipros06 | https://egipros06.newgrounds.com/
+# Language: Python | https://www.python.org/ or https://github.com/python/
+
+# Written IN VScode | https://code.visualstudio.com/ or https://github.com/microsoft/vscode/
+
+
+# LICENSE:
+# MIT License
+
+# Copyright (c) 2026 topojinn
+
+#  Permission is hereby granted, free of charge, to any person obtaining a copy
+#  of this software and associated documentation files (the "Software"), to deal
+#  in the Software without restriction, including without limitation the rights
+#  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#  copies of the Software, and to permit persons to whom the Software is
+#  furnished to do so, subject to the following conditions:
+
+#  The above copyright notice and this permission notice shall be included in all
+#  copies or substantial portions of the Software.
+
+#  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+#  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+#  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+#  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+#  SOFTWARE.
+
+def selectFont():
+    global repl
+    global fontName
+
+    repl = "change actual font to:"
+    fontName = input()
+
+    if fontName == "Arial": #C:\Windows\Fonts\Arial\Arial Normale
+        importArial()
+
+    if fontName == "Calibri": #C:\Windows\Fonts\Calibri\Calibri Normale
+        importCalibri()
+
+    if fontName == "Georgia": #C:\Windows\Fonts\Georgia\Georgia Normale
+        importGeorgia()
+
+    if fontName == "Verdana": #C:\Windows\Fonts\Verdana\Verdana Normale
+        importVerdana()
+
+    if fontName == "Tahoma": #C:\Windows\Fonts\Tahoma\Tahoma Normale
+        importTahoma()
+
+    if fontName == "Times New Roman": #C:\Windows\Fonts\Times New Roman\Times New Romane Normale
+        importTimesNewRoman()
+
+    if fontName == "Courier New": #C:\Windows\Fonts\Courier New\Courier New Normale
+        importCourierNew()
+
+    if fontName == "Lucida Console": #C:\Windows\Fonts\Lucida Console Normale
+        importLucidaConsole()
+
+    if fontName == "FixedSys": #C:\Windows\Fonts\FixedSys Normale
+        importFixedSys()
 
 
 # set delay and define error exit func.
@@ -140,6 +244,7 @@ except ModuleNotFoundError:
 # remember: NEVER edit the following part of the file. Terrible bugs could happen.
 # really. Don't do that. Pls persor of the future, DONT DO THAT!!!!
 # (unless you have to fix a bug)
+
 # all good, let's write:
 
 while True:
@@ -154,6 +259,10 @@ while True:
 
     if repl == "repeat":
         repeat()
+
+    if repl == "font":
+        selectFont()
+
 
     
     repl = (str(repl) * (int(count))) 
