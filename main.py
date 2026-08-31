@@ -174,7 +174,7 @@ def set_delay():
 from pathlib import Path as pth
 
 # WARNING WARNING!!!:
-# **The following worning i sold, the code its about is already fixed and added!**
+# **For the following warning, the code its about is already fixed and added!**
 
 # WARNING: the font import is a bit poorly programmed: trying to import. Arial couldn't work.
 # Is this feature in progress.
@@ -205,6 +205,9 @@ def importTimesNewRoman():
 def importCourierNew():
     font = pth("C:\Windows\Fonts\Courier New\Courier New Normale")
 
+# so the "font" argument is equal to the font's path.
+# you got it?
+
 # the following 2 paths is for a font is ALREADY the normal font:
 
 def importLucidaConsole():
@@ -220,6 +223,16 @@ def importFixedSys():
 #def importTimesNewRoman():
 #    font = pth("C:\Windows\Fonts\Times New Roman")
 
+# warning: customtkinter MUST be installed manually.
+try:
+    import customtkinter as ctk
+except ImportError:
+    print("error: module import fail")
+    exit_error()
+
+except ModuleNotFoundError:
+    print("error: module not imported.\n Import the module manually from the command palette with\n pip install customtkinter")
+    exit_error()
 try:
   import sys as config
 except ImportError:
@@ -275,3 +288,8 @@ while True:
         time.sleep(delay)
 
     print()
+#app = ctk.CTk()
+
+#button = ctk.CTkButton(app, text=txt, corner_radius=10)
+#button.pack()
+#app.mainloop()
